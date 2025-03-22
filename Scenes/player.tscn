@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://djx4qk1uofpfj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_b7ijc"]
+[ext_resource type="PackedScene" uid="uid://dmym7rgsdslal" path="res://Scenes/bird.tscn" id="2_lt76y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oijm0"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.141448, 0)
+script = ExtResource("1_b7ijc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0473334, 0.267899, 0)
+shape = SubResource("SphereShape3D_oijm0")
+
+[node name="bird" parent="." instance=ExtResource("2_lt76y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609248, 0, 0)
+
+[node name="Camera_Controller" type="Node3D" parent="."]
+top_level = true
+
+[node name="Camera_Target" type="Node3D" parent="Camera_Controller"]
+transform = Transform3D(1, 0, 0, 0, 0.80914, 0.587616, 0, -0.587616, 0.80914, 0, 2.33641, 3.80827)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

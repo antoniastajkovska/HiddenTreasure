@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdotld0vn78kq"]
+
+[ext_resource type="FontFile" uid="uid://bj5r1vbi0pcnu" path="res://Assets/Fonts/Kenney Future Square.ttf" id="1_15u7x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpfc3"]
+bg_color = Color(0.620401, 0.568746, 0.733906, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.491316, 0.436434, 0.608029, 1)
+shadow_size = 30
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1112.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fpfc3")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_15u7x")
+theme_override_font_sizes/font_size = 55
+text = "GAME OVER"
+horizontal_alignment = 1

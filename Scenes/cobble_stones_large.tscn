@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wvsah7qpxofa"]
+
+[ext_resource type="PackedScene" uid="uid://b2itvgpp84sg5" path="res://Assets/cobble_stones_large.gltf" id="1_mua7g"]
+
+[node name="cobble_stones_large2" instance=ExtResource("1_mua7g")]
