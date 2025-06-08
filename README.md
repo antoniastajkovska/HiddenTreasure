@@ -12,4 +12,4 @@
 Collect all the coins and find the hidden treasure before the timer expires!
 
 ## Download and play
-Click [here](https://www.dropbox.com/scl/fo/pftf9zi9l8p8vfzqv7608/AGY0TmwxOThicAYLJjNyFpc?rlkey=0ix79dh45cnl6yp374zqrz91j&st=7p60c8v9&dl=0) to download the game
+Click [here](https://mega.nz/folder/W9wXDKBI#S6ET8PO6P5-SDJ3X6UC06g) to download the game
