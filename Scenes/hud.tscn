@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://belvxy0kvq5ae"]
+[gd_scene load_steps=7 format=3 uid="uid://belvxy0kvq5ae"]
 
-[ext_resource type="Script" path="res://Scenes/hud.gd" id="1_cwky0"]
+[ext_resource type="Script" uid="uid://iqvdbqor4leo" path="res://Scripts/hud.gd" id="1_cwky0"]
 [ext_resource type="Texture2D" uid="uid://6efgeshamthy" path="res://Assets/Images/hud_coin.png" id="1_r6aef"]
-[ext_resource type="Texture2D" uid="uid://csbn60jxavwl" path="res://Assets/Images/treasure-chest.png" id="3_raj62"]
+[ext_resource type="Texture2D" uid="uid://b74nof257cow2" path="res://Assets/Images/treasure_chest.png" id="3_bjfho"]
+[ext_resource type="FontFile" uid="uid://dptjwfvfhuoab" path="res://Assets/Fonts/Kenney Future Narrow.ttf" id="4_6fbih"]
+[ext_resource type="FontFile" uid="uid://cshh8ujordjvh" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_t1xeu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3714m"]
 bg_color = Color(0, 0, 0, 0.266667)
@@ -11,8 +13,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label")]
 script = ExtResource("1_cwky0")
+stopwatch_label = NodePath("StopwatchLabel")
 
 [node name="CoinsLabel" type="Label" parent="."]
 offset_left = 133.0
@@ -60,8 +63,7 @@ offset_bottom = 63.0
 theme_override_colors/font_color = Color(0.647059, 0.407843, 0.00392157, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 30
-text = "/29
-"
+text = "/30"
 
 [node name="Chest" type="Panel" parent="."]
 offset_left = 36.0
@@ -90,7 +92,7 @@ offset_bottom = 59.0
 theme_override_colors/font_color = Color(0.647059, 0.407843, 0.00392157, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 30
-text = "/1
+text = "/ 1
 "
 
 [node name="TextureRect2" type="TextureRect" parent="Chest"]
@@ -99,7 +101,7 @@ offset_left = 13.0
 offset_top = 14.0
 offset_right = 62.0
 offset_bottom = 63.0
-texture = ExtResource("3_raj62")
+texture = ExtResource("3_bjfho")
 expand_mode = 1
 
 [node name="ChestLabel" type="Label" parent="."]
@@ -111,3 +113,32 @@ theme_override_colors/font_color = Color(0.647059, 0.407843, 0.00392157, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 30
 text = "#"
+
+[node name="StopwatchLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_6fbih")
+theme_override_font_sizes/font_size = 55
+text = "00:00:000"
+vertical_alignment = 1
+
+[node name="ChestOpenLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.5
+offset_top = 7.0
+offset_right = 221.5
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("5_t1xeu")
+theme_override_font_sizes/font_size = 60
+text = "To open the chest press E"

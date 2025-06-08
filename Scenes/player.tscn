@@ -1,27 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://djx4qk1uofpfj"]
+[gd_scene load_steps=6 format=3 uid="uid://djx4qk1uofpfj"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_b7ijc"]
-[ext_resource type="PackedScene" uid="uid://dmym7rgsdslal" path="res://Scenes/bird.tscn" id="2_lt76y"]
+[ext_resource type="Script" uid="uid://d12qe76ecxcn2" path="res://Scripts/player.gd" id="1_b7ijc"]
+[ext_resource type="PackedScene" uid="uid://dmym7rgsdslal" path="res://Scenes/Park/bird.tscn" id="2_lt76y"]
+[ext_resource type="AudioStream" uid="uid://eu2pi7px26c1" path="res://Assets/Sounds/JumpSound.mp3" id="3_6t5aa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oijm0"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
+radius = 0.720913
+
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.141448, 0)
+collision_mask = 5
 script = ExtResource("1_b7ijc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0473334, 0.267899, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0473334, 0.251874, 0)
 shape = SubResource("SphereShape3D_oijm0")
 
 [node name="bird" parent="." instance=ExtResource("2_lt76y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609248, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0609248, -0.000840932, 0)
 
 [node name="Camera_Controller" type="Node3D" parent="."]
 top_level = true
 
 [node name="Camera_Target" type="Node3D" parent="Camera_Controller"]
-transform = Transform3D(1, 0, 0, 0, 0.80914, 0.587616, 0, -0.587616, 0.80914, 0, 2.33641, 3.80827)
+transform = Transform3D(1, 0, 0, 0, 0.965908, 0.258887, 0, -0.258887, 0.965908, 0, 1.21874, 2.31767)
 
 [node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
+transform = Transform3D(1, 0, 0, 0, 0.997764, 0.0668311, 0, -0.0668311, 0.997764, 0, 0.453111, 0.280314)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0551454, 0.199011, 0)
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0582442, 0.150465, 0)
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_cvnsp")
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_6t5aa")
+volume_db = -10.0
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

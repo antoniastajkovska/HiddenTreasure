@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://fc6j0rj3meme"
+path.s3tc="res://.godot/imported/treasure_chest_animation_treasure_chest_nor_gl.png-e8a8ffb28e257495ab5757c94dd34dc5.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c084d326fbc206aefeaec9b9cdbed98d"
+}
+
+[deps]
+
+source_file="res://Assets/treasure_chest_animation_treasure_chest_nor_gl.png"
+dest_files=["res://.godot/imported/treasure_chest_animation_treasure_chest_nor_gl.png-e8a8ffb28e257495ab5757c94dd34dc5.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/treasure_chest_animation_treasure_chest_nor_gl.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

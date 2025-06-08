@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjl7hucis4gxm"]
+
+[ext_resource type="Texture2D" uid="uid://b0yyxt1s1o4hd" path="res://Assets/Images/mainMenuImage.png" id="1_1315x"]
+[ext_resource type="Script" uid="uid://cmrfrwa6bk0b8" path="res://Scripts/menu_title.gd" id="1_qhr0q"]
+[ext_resource type="FontFile" uid="uid://cshh8ujordjvh" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_qhr0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgh0h"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuTitle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qhr0q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -14.0
+offset_right = 1168.0
+offset_bottom = 665.0
+color = Color(0.164706, 0.301961, 0.164706, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 43.0
+offset_right = 1051.0
+offset_bottom = 662.0
+rotation = -0.000446351
+texture = ExtResource("1_1315x")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 20.0
+offset_right = 1043.0
+offset_bottom = 266.0
+rotation = -0.0423966
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.101961, 0.227451, 0.415686, 1)
+theme_override_colors/font_outline_color = Color(1, 0.893457, 0.476288, 1)
+theme_override_constants/shadow_offset_x = 15
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("2_qhr0q")
+theme_override_font_sizes/font_size = 200
+text = "Treasure Hunt"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 310.0
+offset_right = 1082.0
+offset_bottom = 417.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_colors/font_color = Color(0.8, 0.333333, 0, 1)
+theme_override_fonts/font = ExtResource("2_qhr0q")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_vgh0h")
+text = "PLAY"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 414.0
+offset_right = 1138.0
+offset_bottom = 521.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_colors/font_color = Color(0.8, 0.333333, 0, 1)
+theme_override_fonts/font = ExtResource("2_qhr0q")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_vgh0h")
+text = "CONTROLS"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

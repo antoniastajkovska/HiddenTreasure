@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ucpmoiuwk5p"]
-
-[ext_resource type="PackedScene" uid="uid://cgcvlaf7mn1pc" path="res://Assets/grass_A.gltf" id="1_kprg6"]
-
-[node name="grass_A2" instance=ExtResource("1_kprg6")]

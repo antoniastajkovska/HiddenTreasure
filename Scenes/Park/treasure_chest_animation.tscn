@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2ekfjl6b5imn"]
+
+[ext_resource type="PackedScene" uid="uid://cof616vanlc7a" path="res://Assets/treasure_chest_animation.glb" id="1_c46mu"]
+[ext_resource type="Script" uid="uid://cahw6ox25de6q" path="res://Scripts/treasure_chest_animation.gd" id="2_5nb3x"]
+[ext_resource type="PackedScene" uid="uid://dx50p6ylxdip4" path="res://Scenes/Park/coin.tscn" id="3_wrkbn"]
+[ext_resource type="AudioStream" uid="uid://ckg7kotmti6wr" path="res://Assets/Sounds/ChestOpensSound.mp3" id="4_44vdm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5nb3x"]
+size = Vector3(0.897827, 0.109497, 0.266479)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1oe28"]
+size = Vector3(0.881592, 0.424438, 0.522461)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrkbn"]
+size = Vector3(0.892456, 0.179443, 0.517212)
+
+[node name="treasure_chest_animation" groups=["chest"] instance=ExtResource("1_c46mu")]
+script = ExtResource("2_5nb3x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" groups=["chest"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00457764, 0.157224, 0.027771)
+shape = SubResource("BoxShape3D_5nb3x")
+
+[node name="Node3D" type="Node3D" parent="treasure_chest_bottom" index="0"]
+
+[node name="Coin" parent="treasure_chest_bottom/Node3D" index="0" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(1.39878e-08, 0.00618522, -0.399952, 5.12778e-08, -0.399952, -0.00618522, -0.4, -5.10554e-08, -1.4779e-08, -0.125003, 0.343327, 0.125363)
+script = null
+
+[node name="Coin2" parent="treasure_chest_bottom/Node3D" index="1" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.18975e-09, 0.0952981, -0.388482, 5.31063e-08, -0.388482, -0.0952981, -0.4, -5.10554e-08, -1.4779e-08, -0.298578, 0.346543, -0.10696)
+script = null
+
+[node name="Coin3" parent="treasure_chest_bottom/Node3D" index="2" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.04474e-08, -0.0451495, -0.397444, 4.9061e-08, -0.397444, 0.0451495, -0.4, -5.10554e-08, -1.4779e-08, 0.295577, 0.346366, -0.091975)
+script = null
+
+[node name="Coin4" parent="treasure_chest_bottom/Node3D" index="3" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(6.72437e-09, 0.0617186, -0.39521, 5.27243e-08, -0.39521, -0.0617186, -0.4, -5.10554e-08, -1.4779e-08, 0.0931348, 0.343509, -0.106318)
+script = null
+
+[node name="Coin5" parent="treasure_chest_bottom/Node3D" index="4" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(-2.14218e-09, 0.126617, -0.379431, 5.31082e-08, -0.379431, -0.126617, -0.4, -5.10554e-08, -1.4779e-08, -0.315564, 0.309414, 0.117496)
+script = null
+
+[node name="Coin11" parent="treasure_chest_bottom/Node3D" index="5" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(1.2473e-08, 0.0179499, -0.399597, 5.16672e-08, -0.399597, -0.0179499, -0.4, -5.10554e-08, -1.4779e-08, 0.249361, 0.340438, 0.120044)
+script = null
+
+[node name="Coin6" parent="treasure_chest_bottom/Node3D" index="6" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.2452e-08, -0.061491, -0.395245, 4.81766e-08, -0.395245, 0.061491, -0.4, -5.10554e-08, -1.4779e-08, 0.05363, 0.316938, 0.118754)
+script = null
+
+[node name="Coin7" parent="treasure_chest_bottom/Node3D" index="7" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.2452e-08, -0.061491, -0.395245, 4.81766e-08, -0.395245, 0.061491, -0.4, -5.10554e-08, -1.4779e-08, 0.0830871, 0.330524, 0.0387534)
+script = null
+
+[node name="Coin8" parent="treasure_chest_bottom/Node3D" index="8" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.2452e-08, -0.061491, -0.395245, 4.81766e-08, -0.395245, 0.061491, -0.4, -5.10554e-08, -1.4779e-08, -0.108043, 0.3364, -0.0901009)
+script = null
+
+[node name="Coin9" parent="treasure_chest_bottom/Node3D" index="9" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(2.2452e-08, -0.061491, -0.395245, 4.81766e-08, -0.395245, 0.061491, -0.4, -5.10554e-08, -1.4779e-08, -0.108043, 0.3364, 0.0181766)
+script = null
+
+[node name="Coin10" parent="treasure_chest_bottom/Node3D" index="10" instance=ExtResource("3_wrkbn")]
+transform = Transform3D(0.263258, 0.0610509, -0.294904, 0.0897638, -0.389798, -0.000564504, -0.287468, -0.0658077, -0.270243, -0.301443, 0.3364, 0.00032182)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="treasure_chest_bottom" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure_chest_bottom/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, 0.191223, 0.00732422)
+shape = SubResource("BoxShape3D_1oe28")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="treasure_chest_lid" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure_chest_lid/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00518799, 0.0999756, 0.246399)
+shape = SubResource("BoxShape3D_wrkbn")
+
+[node name="ChestOpenSound" type="AudioStreamPlayer3D" parent="." index="7"]
+stream = ExtResource("4_44vdm")
+volume_db = -13.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

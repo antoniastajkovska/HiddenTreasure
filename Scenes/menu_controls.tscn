@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://jvchju5i8fw"]
+
+[ext_resource type="Script" uid="uid://dh40cche8se6r" path="res://Scripts/menu_controls.gd" id="1_ch0yc"]
+[ext_resource type="FontFile" uid="uid://cshh8ujordjvh" path="res://Assets/Fonts/Aladin-Regular.ttf" id="1_iknjh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tym2w"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ch0yc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 1177.0
+offset_bottom = 661.0
+color = Color(0.164706, 0.301961, 0.164706, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 15.0
+offset_right = 759.0
+offset_bottom = 200.0
+rotation = -0.0375105
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.101961, 0.227451, 0.415686, 1)
+theme_override_colors/font_outline_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 150
+text = "Controls"
+
+[node name="Movement" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 198.0
+offset_right = 209.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 50
+text = "Movement:"
+
+[node name="Label2" type="Label" parent="Movement"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 64.0
+offset_right = 355.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 40
+text = "Up  --> Arrow Up
+Down --> Arrow Down
+Left --> Arrow Left
+Right --> Arrow Right 
+Jump --> Space"
+
+[node name="CameraMovement" type="Label" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 198.0
+offset_right = 722.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 50
+text = "Camera Movement"
+
+[node name="Label" type="Label" parent="CameraMovement"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 64.0
+offset_right = 286.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 40
+text = "To the left --> A
+To the right --> D"
+
+[node name="Interact" type="Label" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 198.0
+offset_right = 937.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 50
+text = "Interact: "
+
+[node name="Label" type="Label" parent="Interact"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 64.0
+offset_right = 346.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 40
+text = "To open the chest --> E"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 508.0
+offset_right = 922.0
+offset_bottom = 615.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.894118, 0.47451, 1)
+theme_override_colors/font_color = Color(0.8, 0.333333, 0, 1)
+theme_override_fonts/font = ExtResource("1_iknjh")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_tym2w")
+text = "Go back to Main Menu"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

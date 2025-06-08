@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmym7rgsdslal"]
-
-[ext_resource type="PackedScene" uid="uid://p48xcsfjkvst" path="res://Assets/bird.gltf" id="1_1yy31"]
-
-[node name="bird2" instance=ExtResource("1_1yy31")]

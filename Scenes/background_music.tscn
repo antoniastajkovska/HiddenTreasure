@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1uga8hi8mia8"]
+
+[ext_resource type="AudioStream" uid="uid://dryk6xao1lbrx" path="res://Assets/Sounds/BackgroungMusic.ogg" id="1_pu4hd"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972598, 0)
+stream = ExtResource("1_pu4hd")
+autoplay = true
